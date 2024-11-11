@@ -1,14 +1,24 @@
-<div class="container my-5">
+<div class="container my-5 p-5 bg-light rounded">
     <h1>Articles</h1>
+    <div class="row">
+        <% @articles.each do |article|%>
+            <div class="col-4 mx-2 p-3 rounded">
+                <div class="container">
+                    <h3> <%= article.title%> </h3>
+                    <p><%= article.body%></p>
 
-    <% @articles.each do |article|%>
-        <div class="container" >
-            <h3> <a href="/articles/ <%= article.id %>"><%= article.title%></a> </h3>
-            
-            <p><%= article.body%></p>
-        </div>
-    <% end %>
+                    <%= link_to "view", article, class: 'btn btn-outline-primary py-1 px-3 float-end'%>
+                </div>
+            </div>
+        <% end %>
+    </div>
 </div>
 
+<style>
+    .col-4{
+        background: linear-gradient(to right bottom, lightgray, lightblue );
+        box-shadow: 1px 1px 6px black;
+    }
+</style>
 
 
