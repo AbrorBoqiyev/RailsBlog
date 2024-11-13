@@ -2,5 +2,12 @@
     <h1><%= @article.title %></h1>
 
     <p><%= @article.body %></p>
-    <%= link_to "Back-to-Articles", root_path, class: "btn btn-outline-primary"%> 
+    <div class="container">
+        <%= link_to "Edit", edit_article_path(@article), class: "btn btn-outline-success" %>
+        <%= link_to "Back-to-Articles", root_path, class: "btn btn-outline-primary"%> 
+        <%= link_to "Destroy", article_path(@article), data: {
+            turbo_method: :delete,
+            turbo_confirm: 'Are you sure?'
+        }, class: "btn btn-outline-danger" %>
+    </div>
 </div>
