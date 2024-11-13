@@ -1,0 +1,73 @@
+
+
+<%= form_with model: @article do |form| %>   
+
+<div class="form-control">
+    <%= form.label :title %><br/>
+    <%= form.text_field :title %>
+    <% @article.errors.full_messages_for(:title).each do |message| %>
+    <div class="text-danger"><%= message %></div>            
+    <% end %>    
+</div>
+
+<div class="form-control">
+    <%= form.label :body %><br/>
+    <%= form.text_area :body %>
+    <% @article.errors.full_messages_for(:body).each do |message| %>
+    <div class="text-danger"><%= message %></div>
+    <% end %>
+</div>
+
+<div class="form-control">
+    <%= form.submit class: "btn btn-outline-primary" %>
+</div>
+<div class="form-control">
+    <%= link_to "back-to-Articles", root_path, class: "back btn btn-outline-primary " %>
+</div>
+
+<% end %>
+
+
+
+<style>
+    .cover{
+        background: linear-gradient(to right bottom, rgb(247, 239, 239), rgb(203, 234, 245))
+    }
+    .inside{
+        background-color: ;
+    }
+    .form-control{
+        background-color: transparent;
+        border:none;
+    }
+    h1{
+        text-align: center;
+    }
+    h1, label, .btn{
+        font-family: cursive;
+    }
+    input, button, textarea, .back{
+        width: 80%;
+        border-radius: 5px;
+        border: none;   
+        outline: none;
+        box-shadow: 1px 1px 5px #333;
+        padding: 5px 15px;
+        transition: 0.5s;
+        margin-left: 5rem;
+        font-size: large;
+    }
+    .back{margin-top: 10px}
+    label{
+        margin-left: 5rem;
+        font-size: large;
+    }
+    input[type='text'], textarea{
+        filter: blur(0.6px);
+    }
+    
+    input:focus, textarea:focus {
+        padding: 5.5px 20px;
+        filter: blur(0);
+    }
+</style>
