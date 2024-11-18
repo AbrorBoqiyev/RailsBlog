@@ -7,6 +7,10 @@
                 <div class="container  rounded my-2 p-3 cardcha">
                     <h2><%= article.title%></h2>
                     <p><%= article.body%></p>
+                    
+                    <div class="container d-flex justify-content-end">
+                        <a href="/articles/<%= article.id%>" class="btn btn-outline-primary py-1">View</a>
+                    </div>
                 </div>
             </div>
         <% end%>
@@ -21,5 +25,8 @@
     .cardcha{
         box-shadow: 1px 1px 5px #222;
         background: linear-gradient(to right bottom, lightgray, lightblue)
+    }
+    p{
+        font-size: 20px;
     }
 </style>
