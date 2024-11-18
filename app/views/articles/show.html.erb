@@ -1,0 +1,18 @@
+<div class="container cover m-5 px-5 py-4 rounded">
+    <h1><%= @article.title %></h1>
+
+    <p><%= @article.body %></p>
+
+    <a href="<%= root_path%>", class="btn btn-outline-primary">back-to-articles</a>
+
+</div>
+
+<style>
+    .cover{
+        box-shadow: 1px 1px 5px black;
+        background: linear-gradient(to right bottom, lightgray, lightblue)
+    }
+    p{
+        font-size: 26px;
+    }
+</style>
