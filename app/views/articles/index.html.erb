@@ -9,7 +9,7 @@
                     <p><%= article.body%></p>
                     
                     <div class="container d-flex justify-content-end">
-                        <a href="/articles/<%= article.id%>" class="btn btn-outline-primary py-1">View</a>
+                        <%= link_to "View", article, class: "btn btn-outline-primary py-1"%>
                     </div>
                 </div>
             </div>
