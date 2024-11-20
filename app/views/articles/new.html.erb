@@ -1,31 +1,7 @@
 <div class="container">
+    
     <h1>New Article</h1>
 
-    <%= form_with model: @article do |form|%>
+    <%= render "form", article: @article %>
 
-        <div class="form-control">
-            <%= form.label :title %>
-            <%= form.text_field :title %>
-            <%= @article.errors.full_messages_for(:title) do |message|%>
-                <div class="message"><%= message %></div>
-            <% end %>
-        </div>
-
-        <div class="form-control">
-            <%= form.label :body %>
-            <%= form.text_area :body %>
-            <%= @article.errors.full_messages_for(:body) do |message| %>
-                <div > <%= message %> </div>
-            <% end %>
-        </div>
-
-        <div class="form-control">
-            <%= form.submit class: "btn btn-outline-primary my-1"%>
-        </div>
-
-    <% end %>
 </div>
-
-<style>
-    
-</style>
