@@ -11,6 +11,41 @@
                                 turbo_confirm: "Are you sure?"
                             }, class: "btn btn-outline-danger py-1" %>
     </div>
+    <h2>comments</h2>
+    <% @article.comments.each do |comment| %>
+        <div class="container comment rounded">
+            <div>
+                <strong>commenter:</strong>
+                <%= comment.commenter %>
+            </div>
+
+                <hr class="w-50 my-1 text-black " >
+            <div class="sharh rounded">
+                <em><%= comment.body %></em>
+            </div>
+        </div>
+        <hr>
+
+    <% end %>
+
+    <h2> add a comment:</h2>
+    <%= form_with model: [@article, @article.comments.build ] do |form| %>
+
+        <div class="form-control">
+            <%= form.label :commenter %> <br />
+            <%= form.text_field :commenter %>
+        </div>
+
+        <div class="form-control">
+            <%= form.label :body %> <br />
+            <%= form.text_area :body %>
+        </div>
+
+        <div class="form-control">
+            <%= form.submit class: "btn btnc btn-outline-primary" %>
+        </div>
+
+    <% end %>
 
 </div>
 
@@ -21,5 +56,50 @@
     }
     p{
         font-size: 26px;
+    }
+    .comment{
+        padding: 10px;
+        font-size: 18px;
+        box-shadow: 1px 1px 5px black;
+        background-color: transparent;
+    }
+
+    .sharh{
+        background-color: rgb(221, 229, 238);
+        padding: 5px 15px;
+    }
+
+    .form-control{
+        background-color: transparent;
+        border: none;   
+        padding-left: 10%;
+    }
+    .btn{
+        margin-top: 8px;
+    }
+    
+    label{
+        font-family: cursive;
+        font-size: 18px;
+        color: #333;        
+    }
+    input, textarea, .btnc{
+        width: 80%;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        box-shadow: 1px 1px 5px black;
+        padding: 5px 15px;
+        font-size: 18px;
+        font-family: cursive;
+    }
+    input, textarea{
+        background-color:  transparent;
+        color: #333;
+        transition: 0.3s;  
+    }
+
+    input:focus, textarea:focus{
+        padding: 6px 20px;
     }
 </style>
