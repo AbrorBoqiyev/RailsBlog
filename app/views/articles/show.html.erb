@@ -12,21 +12,7 @@
                             }, class: "btn btn-outline-danger py-1" %>
     </div>
     <h2>comments</h2>
-    <% @article.comments.each do |comment| %>
-        <div class="container comment rounded">
-            <div>
-                <strong>commenter:</strong>
-                <%= comment.commenter %>
-            </div>
-
-                <hr class="w-50 my-1 text-black " >
-            <div class="sharh rounded">
-                <em><%= comment.body %></em>
-            </div>
-        </div>
-        <hr>
-
-    <% end %>
+     <%= render @article.comments %>
 
     <h2> add a comment:</h2>
     <%= form_with model: [@article, @article.comments.build ] do |form| %>
