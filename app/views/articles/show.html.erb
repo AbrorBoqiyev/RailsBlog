@@ -15,23 +15,7 @@
      <%= render @article.comments %>
 
     <h2> add a comment:</h2>
-    <%= form_with model: [@article, @article.comments.build ] do |form| %>
-
-        <div class="form-control">
-            <%= form.label :commenter %> <br />
-            <%= form.text_field :commenter %>
-        </div>
-
-        <div class="form-control">
-            <%= form.label :body %> <br />
-            <%= form.text_area :body %>
-        </div>
-
-        <div class="form-control">
-            <%= form.submit class: "btn btnc btn-outline-primary" %>
-        </div>
-
-    <% end %>
+    <%= render "comments/form", article: @article %>
 
 </div>
 
