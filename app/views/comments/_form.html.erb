@@ -10,6 +10,11 @@
     </div>
 
     <div class="form-control">
+        <%= form.label :status %>
+        <%= form.select :status, Visible::VALID_STATUSES, { selected: "public" } %>
+    </div>
+
+    <div class="form-control">
         <%= form.submit class: "btn btnc btn-outline-primary " %>
     </div>
 
