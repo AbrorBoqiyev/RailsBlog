@@ -1,12 +1,14 @@
-<div class="container comment rounded">
-    <div>
-        <strong>commenter:</strong>
-        <%= comment.commenter %>
-    </div>
+<% unless comment.archived? %>
+    <div class="container comment rounded">
+        <div>
+            <strong>commenter:</strong>
+            <%= comment.commenter %>
+        </div>
 
-        <hr class="w-50 my-1 text-black " >
-    <div class="sharh rounded">
-        <em><%= comment.body %></em>
+            <hr class="w-50 my-1 text-black " >
+        <div class="sharh rounded">
+            <em><%= comment.body %></em>
+        </div>
     </div>
-</div>
-<hr>
+    <hr>
+<% end %>
