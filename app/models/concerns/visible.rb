@@ -1,19 +1,19 @@
-module visible
-  extend ActiveSupport::Consern
+module Visible
+  extend ActiveSupport::Concern
 
-  VALID_STATUES = [ "private", "public", "archived" ]
+  VALID_STATUSES = [ "private", "public", "archived" ]
 
   included do 
-    validates :status, inclusion : { in: VALID_STATUES }
+    validates :status, inclusion: { in: VALID_STATUSES }
   end
 
-  class_method do
+  class_methods do
     def public_count
       where(status: "public").count
     end
   end
 
-  def archived
+  def archived?
     status == "archived"
   end
 end
