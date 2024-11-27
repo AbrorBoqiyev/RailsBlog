@@ -9,6 +9,12 @@
         <div class="sharh rounded">
             <em><%= comment.body %></em>
         </div>
+        <div class="d-flex justify-content-end">
+            <%= link_to "Delete", [ comment.article, comment ], data: {
+                turbo_method: :delete,
+                                        turbo_confirm: "Are you sure?"
+            }, class: "btn btn-outline-danger py-1 " %>
+        </div>
     </div>
     <hr>
 <% end %>
