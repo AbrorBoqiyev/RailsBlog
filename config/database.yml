@@ -8,7 +8,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
+  username: postgres   
   password: qwe
   localhost: 127.0.0.1:3000
 
